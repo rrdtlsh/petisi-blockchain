@@ -17,16 +17,18 @@ Blockchain (Hardhat Local / Sepolia Testnet)
 ```
 
 ### Tech Stack
-| Layer | Teknologi |
-|-------|-----------|
-| Smart Contract | Solidity ^0.8.19 |
-| Blockchain | Hardhat Local / Sepolia |
-| Framework | Hardhat |
-| Frontend | React + Vite |
-| Web3 Library | ethers.js v6 |
-| Wallet | MetaMask |
+
+| Layer          | Teknologi               |
+| -------------- | ----------------------- |
+| Smart Contract | Solidity ^0.8.19        |
+| Blockchain     | Hardhat Local / Sepolia |
+| Framework      | Hardhat                 |
+| Frontend       | React + Vite            |
+| Web3 Library   | ethers.js v6            |
+| Wallet         | MetaMask                |
 
 ## Fitur Utama
+
 - ✅ Connect MetaMask Wallet
 - ✅ Buat petisi baru (tersimpan di blockchain)
 - ✅ Tanda tangani petisi (1 wallet = 1 tanda tangan)
@@ -37,30 +39,36 @@ Blockchain (Hardhat Local / Sepolia Testnet)
 ## Cara Menjalankan Project
 
 ### Prerequisites
+
 - Node.js v18+
 - MetaMask browser extension
 - VS Code
 
 ### 1. Clone & Setup
+
 ```bash
 git clone <repo-url>
 cd petisi-blockchain
 ```
 
 ### 2. Setup & Jalankan Hardhat
+
 ```bash
 cd contracts
 npm install
+npx hardhat compile
 npx hardhat node          # Terminal 1 — jalankan blockchain lokal
 ```
 
 ### 3. Deploy Smart Contract (Terminal 2)
+
 ```bash
 cd contracts
-npx hardhat run scripts/deploy.js --network hardhat
+npx hardhat run scripts/deploy.js --network localhost
 ```
 
 ### 4. Setup & Jalankan Frontend (Terminal 3)
+
 ```bash
 cd frontend
 npm install
@@ -68,6 +76,7 @@ npm run dev
 ```
 
 ### 5. Konfigurasi MetaMask
+
 - Network Name: Hardhat Local
 - RPC URL: http://127.0.0.1:8545
 - Chain ID: 31337
@@ -76,6 +85,7 @@ npm run dev
 Import private key dari output `npx hardhat node` ke MetaMask.
 
 ## Smart Contract
+
 - **File:** `contracts/contracts/PetitionSystem.sol`
 - **Functions:**
   - `createPetition(title, description)` — write
@@ -86,8 +96,9 @@ Import private key dari output `npx hardhat node` ke MetaMask.
   - `hasSignedPetition(id, wallet)` — read
 
 ## Anggota Kelompok
-| Nama | NIM | Tugas |
-|------|-----|-------|
-| ... | ... | Smart Contract |
-| ... | ... | Frontend |
-| ... | ... | Testing & Deploy |
+
+| Nama | NIM | Tugas            |
+| ---- | --- | ---------------- |
+| ...  | ... | Smart Contract   |
+| ...  | ... | Frontend         |
+| ...  | ... | Testing & Deploy |
