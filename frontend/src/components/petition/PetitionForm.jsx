@@ -46,7 +46,6 @@ const empty = {
   recipient: "",
   background: "",
   demands: "",
-  document: null,
 };
 
 export default function PetitionForm({
@@ -185,53 +184,6 @@ export default function PetitionForm({
               </div>
             ),
           )}
-
-          {/* Upload dokumen */}
-          <div>
-            <label className="text-sm font-semibold text-gray-700 mb-1.5 block">
-              Dokumen Pendukung{" "}
-              <span className="text-gray-400 font-normal">
-                (opsional, PDF maks 5MB)
-              </span>
-            </label>
-            <label
-              className={`flex items-center gap-3 border-2 border-dashed rounded-xl px-4 py-3 cursor-pointer transition-colors
-              ${errors.document ? "border-red-400 bg-red-50" : "border-gray-200 hover:border-blue-400 hover:bg-blue-50"}`}
-            >
-              <FileText size={20} className="text-gray-400 flex-shrink-0" />
-              <span className="text-sm text-gray-500 truncate">
-                {form.document
-                  ? form.document.name
-                  : "Klik untuk upload dokumen PDF..."}
-              </span>
-              <input
-                type="file"
-                accept=".pdf"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files[0];
-                  if (file) set("document", file);
-                }}
-              />
-            </label>
-            {form.document && (
-              <div className="flex items-center justify-between mt-1.5 px-1">
-                <span className="text-xs text-green-600">
-                  ✅ {form.document.name} (
-                  {(form.document.size / 1024).toFixed(0)} KB)
-                </span>
-                <button
-                  onClick={() => set("document", null)}
-                  className="text-xs text-red-400 hover:text-red-600"
-                >
-                  Hapus
-                </button>
-              </div>
-            )}
-            {errors.document && (
-              <p className="text-xs text-red-500 mt-1">⚠ {errors.document}</p>
-            )}
-          </div>
 
           {/* Warning */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-700">
