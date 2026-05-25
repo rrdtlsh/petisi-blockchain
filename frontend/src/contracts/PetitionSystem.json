@@ -1,5 +1,5 @@
 {
-  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "address": "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
   "abi": [
     {
       "anonymous": false,
@@ -7,7 +7,7 @@
         {
           "indexed": true,
           "internalType": "uint256",
-          "name": "petitionId",
+          "name": "id",
           "type": "uint256"
         },
         {
@@ -32,7 +32,7 @@
         {
           "indexed": true,
           "internalType": "uint256",
-          "name": "petitionId",
+          "name": "id",
           "type": "uint256"
         },
         {
@@ -63,7 +63,32 @@
         {
           "indexed": true,
           "internalType": "uint256",
-          "name": "petitionId",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "PetitionEdited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "id",
           "type": "uint256"
         },
         {
@@ -92,7 +117,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_petitionId",
+          "name": "_id",
           "type": "uint256"
         }
       ],
@@ -110,7 +135,17 @@
         },
         {
           "internalType": "string",
-          "name": "_description",
+          "name": "_recipient",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_background",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_demands",
           "type": "string"
         }
       ],
@@ -126,23 +161,38 @@
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "getAllPetitionIds",
-      "outputs": [
+      "inputs": [
         {
-          "internalType": "uint256[]",
-          "name": "",
-          "type": "uint256[]"
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_recipient",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_background",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_demands",
+          "type": "string"
         }
       ],
-      "stateMutability": "view",
+      "name": "editPetition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_petitionId",
+          "name": "_id",
           "type": "uint256"
         }
       ],
@@ -162,7 +212,17 @@
             },
             {
               "internalType": "string",
-              "name": "description",
+              "name": "recipient",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "background",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "demands",
               "type": "string"
             },
             {
@@ -181,6 +241,11 @@
               "type": "uint256"
             },
             {
+              "internalType": "uint256",
+              "name": "updatedAt",
+              "type": "uint256"
+            },
+            {
               "internalType": "bool",
               "name": "isActive",
               "type": "bool"
@@ -189,6 +254,25 @@
           "internalType": "struct PetitionSystem.Petition",
           "name": "",
           "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSigners",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
         }
       ],
       "stateMutability": "view",
@@ -211,7 +295,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_petitionId",
+          "name": "_id",
           "type": "uint256"
         },
         {
@@ -253,7 +337,17 @@
         },
         {
           "internalType": "string",
-          "name": "description",
+          "name": "recipient",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "background",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "demands",
           "type": "string"
         },
         {
@@ -272,6 +366,11 @@
           "type": "uint256"
         },
         {
+          "internalType": "uint256",
+          "name": "updatedAt",
+          "type": "uint256"
+        },
+        {
           "internalType": "bool",
           "name": "isActive",
           "type": "bool"
@@ -284,7 +383,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_petitionId",
+          "name": "_id",
           "type": "uint256"
         }
       ],

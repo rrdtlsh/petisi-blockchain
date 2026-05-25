@@ -1,0 +1,40 @@
+# ========================
+# Node & Dependencies
+# ========================
+node_modules/
+frontend/node_modules/
+contracts/node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# ========================
+# Hardhat / Smart Contract
+# ========================
+contracts/artifacts/
+contracts/cache/
+contracts/typechain/
+contracts/typechain-types/
+contracts/coverage/
+contracts/coverage.json
+
+# ========================
+# Frontend / React / Vite
+# ========================
+frontend/dist/
+frontend/build/
+.eslintcache
+
+# ========================
+# Environment & Editor
+# ========================
+.env
+.env.*
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
