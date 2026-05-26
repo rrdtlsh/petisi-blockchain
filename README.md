@@ -111,6 +111,7 @@ npx hardhat run scripts/deploy.js --network localhost
 
 ```bash
 cd frontend
+npm install tailwindcss @tailwindcss/vite sweetalert2 jspdf xlsx lucide-react react-router-dom recharts
 npm run dev
 ```
 
