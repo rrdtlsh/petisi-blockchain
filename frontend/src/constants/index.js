@@ -17,8 +17,8 @@ export const APP_INFO = {
 // ─── Team ─────────────────────────────────────────────────
 export const TEAM = [
   {
-    name: "IKII",
-    nim: "2310000001",
+    name: "Muhammad Rizki Ramadhan",
+    nim: "2310817310008",
     role: "Project Manajer & Documentation Lead",
     icon: "💻",
   },
@@ -29,14 +29,14 @@ export const TEAM = [
     icon: "⛓️",
   },
   {
-    name: "ehann",
-    nim: "2310000002",
+    name: "Muhammad Raihan",
+    nim: "2310817110008",
     role: "Frontend Developer",
     icon: "🎨",
   },
   {
-    name: "Bila Assegaf",
-    nim: "2310000004",
+    name: "Zahra Nabila",
+    nim: "2310817320007",
     role: "Documentation & Testing",
     icon: "📋",
   },
