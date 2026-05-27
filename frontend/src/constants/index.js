@@ -11,7 +11,7 @@ export const APP_INFO = {
   name: "PetisiChain",
   university: "Universitas Lambung Mangkurat",
   faculty: "Fakultas Teknik",
-  year: "2025",
+  year: "2026",
 };
 
 // ─── Team ─────────────────────────────────────────────────
