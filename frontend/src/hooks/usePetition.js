@@ -28,11 +28,7 @@ export function useWallet() {
       });
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
-      const instance = new ethers.Contract(
-        CONTRACT_ADDRESS,
-        CONTRACT_ABI,
-        signer,
-      );
+      const instance = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
       setAccount(accounts[0]);
       setContract(instance);
       Swal.fire({
@@ -81,10 +77,9 @@ export function usePetitions(contract, account) {
         Array.from({ length: totalNum }, (_, i) => i + 1).map(async (id) => {
           try {
             const p = await contract.getPetition(id);
-            const signed = account
-              ? await contract.hasSignedPetition(id, account)
-              : false;
+            const signed = account ? await contract.hasSignedPetition(id, account) : false;
 
+            const closedAtValue = p.closedAt ? Number(p.closedAt) : 0;
             return {
               id: p.id.toString(),
               title: p.title,
@@ -95,6 +90,7 @@ export function usePetitions(contract, account) {
               signatureCount: Number(p.signatureCount),
               createdAt: new Date(Number(p.createdAt) * 1000),
               updatedAt: new Date(Number(p.updatedAt) * 1000),
+              closedAt: closedAtValue > 0 ? new Date(closedAtValue * 1000) : null,
               isActive: p.isActive,
               hasSigned: signed,
             };
@@ -132,12 +128,7 @@ export function usePetitions(contract, account) {
         didOpen: () => Swal.showLoading(),
       });
 
-      const tx = await contract.createPetition(
-        title,
-        recipient,
-        background,
-        demands,
-      );
+      const tx = await contract.createPetition(title, recipient, background, demands);
       await tx.wait();
 
       await Swal.fire({

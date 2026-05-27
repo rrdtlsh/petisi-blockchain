@@ -13,6 +13,7 @@ contract PetitionSystem {
         uint256 signatureCount;
         uint256 createdAt;
         uint256 updatedAt;
+        uint256 closedAt;
         bool isActive;
     }
 
@@ -53,6 +54,7 @@ contract PetitionSystem {
             signatureCount: 0,
             createdAt: block.timestamp,
             updatedAt: block.timestamp,
+            closedAt: 0,
             isActive: true
         });
         _titleExists[titleHash] = true;
@@ -98,6 +100,7 @@ contract PetitionSystem {
         require(p.creator == msg.sender, "Hanya pembuat petisi yang bisa menutup");
         require(p.isActive, "Petisi sudah ditutup");
         p.isActive = false;
+        p.closedAt = block.timestamp;
         emit PetitionClosed(_id, msg.sender, block.timestamp);
     }
 
