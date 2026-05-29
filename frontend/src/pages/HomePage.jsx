@@ -61,7 +61,7 @@ const steps = [
   },
 ];
 
-export default function HomePage({ account, onConnect, petitions }) {
+export default function HomePage({ account, connectWallet, petitions }) {
   const activePetitions = petitions?.filter((p) => p.isActive).length || 0;
   const totalSignatures =
     petitions?.reduce((s, p) => s + p.signatureCount, 0) || 0;
@@ -95,7 +95,7 @@ export default function HomePage({ account, onConnect, petitions }) {
             </Link>
             {!account && (
               <button
-                onClick={onConnect}
+                onClick={connectWallet}
                 className="inline-flex items-center gap-2 bg-blue-600 border border-blue-400 text-white px-7 py-3.5 rounded-xl font-bold text-base hover:bg-blue-500 transition-colors"
               >
                 🦊 Connect MetaMask

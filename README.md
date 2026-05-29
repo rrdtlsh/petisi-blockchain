@@ -142,10 +142,10 @@ User → MetaMask → React + ethers.js → Smart Contract → Blockchain
 
 | Nama              | NIM           | Role                                         |
 | ----------------- | ------------- | -------------------------------------------- |
-| IKI               | 231xxxxx      | Project Manajer & Documentation Lead         |
-| Raudatul Sholehah | 2310817220002 | Smart Contract Developer & Backend Developer |
-| ehan              | 231xxxxx      | Frontend Developer                           |
-| bila              | 231xxxxx      | Documentation & Testing                      |
+| Muhammad Rizki Ramadhan | 2310817310008 | Project Manajer & Documentation Lead         |
+| Raudatul Sholehah       | 2310817220002 | Smart Contract Developer & Backend Developer |
+| Muhammad Raihan         | 2310817110008 | Frontend Developer                           |
+| Zahra Nabila            | 2310817320007 | Documentation & Testing                      |
 
 ---
 
